@@ -1,0 +1,21 @@
+.page {
+  width: 100%;
+  max-width: 1000px;
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.header {
+  width: 100%;
+}
+
+.poster {
+  width: 100%;
+  max-width: 250px;
+  object-fit: contain;
+}

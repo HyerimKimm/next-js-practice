@@ -1,0 +1,18 @@
+.layout {
+  width: 100vw;
+  max-width: 1000px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.title {
+  padding: 1rem;
+}
+
+.section {
+  width: 100%;
+  padding: 1rem;
+}

@@ -1,0 +1,38 @@
+.news_list {
+  max-width: 1000px;
+  list-style: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minMax(200px, 1fr));
+  gap: 8px;
+}
+
+.news_item {
+  width: 100%;
+}
+
+.news_item > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--grey02);
+
+  &:hover {
+    background-color: var(--grey03);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--grey11);
+
+    &:hover {
+      background-color: var(--grey12);
+    }
+  }
+}
+
+.news_img {
+  width: 100%;
+  object-fit: contain;
+}

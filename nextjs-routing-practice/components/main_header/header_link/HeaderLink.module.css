@@ -1,0 +1,31 @@
+.link_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.button {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+.selected {
+  background-color: gray;
+}

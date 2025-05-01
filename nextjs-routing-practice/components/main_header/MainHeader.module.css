@@ -1,0 +1,30 @@
+.header_wrap {
+  width: 100%;
+  border-bottom: 1px solid var(--grey05);
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.button {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}

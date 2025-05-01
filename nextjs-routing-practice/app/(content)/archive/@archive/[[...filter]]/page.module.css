@@ -1,0 +1,32 @@
+.nav_wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.list_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.list_item {
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+
+.list_item.selected {
+  background-color: gray;
+}
+
+.list_item > a {
+  &:hover {
+    color: skyblue;
+  }
+}
