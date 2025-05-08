@@ -22,7 +22,7 @@ function Post({ post, action }) {
           loader={imageLoader}
           src={post.image}
           width={200}
-          height={0}
+          height={120}
           alt={post.title}
           quality={50}
         />
