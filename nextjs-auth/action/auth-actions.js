@@ -1,5 +1,6 @@
 "use server";
 
+import { redirect } from "next/navigation";
 import { hashUserPassword } from "@/lib/hash";
 import { createUser } from "@/lib/user";
 
