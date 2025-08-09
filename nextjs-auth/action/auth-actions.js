@@ -22,5 +22,17 @@ export async function signup(prevState, formData) {
     return { errors: errors };
   }
   const hashedPassword = hashUserPassword(password);
-  createUser(email, hashedPassword);
+
+  try {
+    await createUser(email, hashedPassword);
+  } catch (e) {
+    if (e.code === "SQLITE_CONSTRAINT_UNIQUE") {
+      errors.email = "Email already exists";
+
+      return { errors: errors };
+    }
+    throw e;
+  }
+
+  redirect("/training");
 }
