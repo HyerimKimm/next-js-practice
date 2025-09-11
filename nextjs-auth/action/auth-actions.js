@@ -3,8 +3,8 @@
 import { redirect } from "next/navigation";
 import { hashUserPassword } from "@/lib/hash";
 import { createUser, getUserByEmail } from "@/lib/user";
-import { createAuthSession } from "@/lib/auth";
-import { verifyUserPassword } from "@/lib/hash";
+import { createAuthSession, destroyAuthSession } from "@/lib/auth";
+import { verifyPassword } from "@/lib/hash";
 
 export async function signup(prevState, formData) {
   const email = formData.get("email");
@@ -55,7 +55,7 @@ export async function login(prevState, formData) {
     return { errors: errors };
   }
 
-  const isValidPassword = verifyUserPassword(existingUser.password, password);
+  const isValidPassword = verifyPassword(existingUser.password, password);
 
   if (!isValidPassword) {
     errors.password = "Invalid password";
@@ -73,4 +73,9 @@ export async function auth(mode, prevState, formData) {
   } else {
     return signup(prevState, formData);
   }
+}
+
+export async function logout() {
+  await destroyAuthSession();
+  redirect("/");
 }

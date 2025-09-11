@@ -106,3 +106,30 @@ export async function verifyAuth() {
     };
   }
 }
+
+export async function destroyAuthSession() {
+  const result = await verifyAuth();
+
+  if (!result.success) {
+    return {
+      success: false,
+      message: "세션 검증 실패",
+      data: null,
+    };
+  }
+
+  await lucia.invalidateSession(result.data.id);
+
+  const sessionCookie = lucia.createBlankSessionCookie();
+  (await cookies()).set(
+    sessionCookie.name,
+    sessionCookie.value,
+    sessionCookie.attributes
+  );
+
+  return {
+    success: true,
+    message: "세션 삭제 성공",
+    data: null,
+  };
+}
